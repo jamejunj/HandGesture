@@ -1,1 +1,1 @@
-git clone https://github.com/jamejunj/HandGesture
+git pull origin master
