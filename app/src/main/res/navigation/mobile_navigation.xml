@@ -13,21 +13,21 @@
 
     <fragment
         android:id="@+id/nav_ParameterSetting"
-        android:name="com.example.handgesture.ui.gallery.GalleryFragment"
-        android:label="Parameter Setting"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="com.example.handgesture.ui.parameter.ParameterFragment"
+        android:label="@string/menu_parameter"
+        tools:layout="@layout/fragment_parameter" />
 
     <fragment
         android:id="@+id/nav_CaptureImage"
-        android:name="com.example.handgesture.ui.slideshow.SlideshowFragment"
-        android:label="Capture Image"
-        tools:layout="@layout/fragment_slideshow" />
+        android:name="com.example.handgesture.ui.capture.CaptureFragment"
+        android:label="@string/menu_capture"
+        tools:layout="@layout/fragment_capture" />
 
     <fragment
         android:id="@+id/nav_PredictImageClass"
-        android:name="com.example.handgesture.ui.tools.ToolsFragment"
-        android:label="Predict Image Class"
-        tools:layout="@layout/fragment_tools" />
+        android:name="com.example.handgesture.ui.predict.PredictFragment"
+        android:label="@string/menu_predict"
+        tools:layout="@layout/fragment_predict" />
 
 
 
