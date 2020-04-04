@@ -5,19 +5,18 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="10dp"
-    tools:context=".ui.Capture">
+    android:padding="10dp">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/image_view"/>
+        android:id="@+id/capturePreview"/>
 
     <Button
-        android:id="@+id/bt_Cap"
+        android:id="@+id/btnCapture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAPTURE IMAGE"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="@string/menu_capture" />
 </LinearLayout>

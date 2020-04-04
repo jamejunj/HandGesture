@@ -1,4 +1,4 @@
-package com.example.handgesture.ui;
+/*package com.example.handgesture.ui;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -27,8 +27,8 @@ public class Capture extends AppCompatActivity {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.fragment_capture);
 
-        imageView = findViewById(R.id.image_view);
-        btCap = findViewById(R.id.bt_Cap);
+        imageView = findViewById(R.id.capturePreview);
+        btCap = findViewById(R.id.ActionCapture);
 
         if(ContextCompat.checkSelfPermission(Capture.this,
                 Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
@@ -57,3 +57,4 @@ public class Capture extends AppCompatActivity {
         }
     }
 }
+ */
