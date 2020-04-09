@@ -60,7 +60,9 @@ public class CaptureFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            preview.setImageBitmap(bitmap);
+            /*if (resultCode == Activity.RESULT_OK) {
                 Bitmap bmp = (Bitmap) data.getExtras().get("data");
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
@@ -68,7 +70,7 @@ public class CaptureFragment extends Fragment {
                 Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0,
                         byteArray.length);
                 preview.setImageBitmap(bitmap);
-            }
+            }*/
         }
     }
 }
