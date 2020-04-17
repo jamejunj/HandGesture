@@ -1,60 +1,77 @@
-/*package com.example.handgesture.ui;
+/* package com.example.handgesture.ui.capture;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.handgesture.R;
+import com.example.handgesture.ui.capture.CaptureViewModel;
 
-public class Capture extends AppCompatActivity {
-    ImageView imageView;
-    Button btCap;
+import java.io.ByteArrayOutputStream;
 
-    @Override
-    protected void onCreate(Bundle saveInstanceState){
-        super.onCreate(saveInstanceState);
-        setContentView(R.layout.fragment_capture);
+public class CaptureFragment extends Fragment {
+    public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 401;
 
-        imageView = findViewById(R.id.capturePreview);
-        btCap = findViewById(R.id.ActionCapture);
+    ImageView preview;
+    Button capture;
 
-        if(ContextCompat.checkSelfPermission(Capture.this,
-                Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(Capture.this,
-                    new String[]{
-                            Manifest.permission.CAMERA
-                    },
-                    100);
-        }
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
 
-        btCap.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,100);
-
+        View root = inflater.inflate(R.layout.fragment_capture, container, false);
+        preview = root.findViewById(R.id.capturePreview);
+        capture = (Button) root.findViewById(R.id.btnCapture);
+        capture.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA)
+                        == PackageManager.PERMISSION_DENIED){
+                    ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CAMERA}, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+                }else {
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+                }
             }
         });
+        return root;
     }
 
-
-    public void onActivityReenter(int requestCode, int resultCode, @Nullable Intent data) {
-        if(requestCode == 100){
-            Bitmap captureImage = (Bitmap) data.getExtras().get("data");
-            imageView.setImageBitmap(captureImage);
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            preview.setImageBitmap(bitmap);
+            /*if (resultCode == Activity.RESULT_OK) {
+                Bitmap bmp = (Bitmap) data.getExtras().get("data");
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+                Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0,
+                        byteArray.length);
+                preview.setImageBitmap(bitmap);
+            }
         }
     }
 }
- */
+*/
