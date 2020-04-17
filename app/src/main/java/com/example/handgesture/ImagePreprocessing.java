@@ -1,6 +1,8 @@
 package com.example.handgesture;
 
 
+import android.graphics.Color;
+
 import ij.ImagePlus;
 import ij.io.Opener;
 import ij.process.ByteProcessor;

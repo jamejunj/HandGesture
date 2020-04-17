@@ -1,2 +1,0 @@
-configurations.maybeCreate("default")
-artifacts.add("default", file('imagingbook_plugins_all-1.6.jar'))
