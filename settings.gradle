@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':commons-math3-3.6.1', ':ij', ':imagingbook-common-1.6', ':imagingbook_plugins_all-1.6', ':JTransforms-3.1'
 rootProject.name='Hand Gesture'
