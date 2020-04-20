@@ -1,4 +1,4 @@
-package com.example.handgesture;
+/*package com.example.handgesture;
 
 
 import android.graphics.Color;
@@ -234,3 +234,4 @@ public class ImagePreprocessing {
 
 
 }
+*/
