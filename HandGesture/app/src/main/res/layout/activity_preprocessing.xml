@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreprocessingActivity">
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_primary"
+        android:fontFamily="@font/twcenmt"
+        android:text="Next"
+        android:textColor="@drawable/btn_primary_text"
+        android:textFontWeight="700"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="296dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/title_sm" />
+
+    <ImageView
+        android:id="@+id/previewImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/preview" />
+
+    <Button
+        android:id="@+id/returnBtn"
+        android:layout_width="106dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_danger"
+        android:fontFamily="@font/twcenmt"
+        android:text="Back"
+        android:textColor="@drawable/btn_danger_text"
+        android:textFontWeight="400"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/change_bin"
+        android:layout_width="288dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="112dp"
+        android:text="Binray"
+        android:background="@drawable/btn_default"
+        android:textColor="@drawable/btn_default_text"
+        android:fontFamily="@font/twcenmt"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/previewImage" />
+
+    <Button
+        android:id="@+id/change_denoise"
+        android:layout_width="288dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Denoise"
+        android:background="@drawable/btn_default"
+        android:textColor="@drawable/btn_default_text"
+        android:fontFamily="@font/twcenmt"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/change_bin" />
+
+    <Button
+        android:id="@+id/change_contour"
+        android:layout_width="288dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Contour"
+        android:background="@drawable/btn_default"
+        android:textColor="@drawable/btn_default_text"
+        android:fontFamily="@font/twcenmt"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/change_denoise" />
+
+    <Button
+        android:id="@+id/change_gray"
+        android:layout_width="124dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="380dp"
+        android:background="@drawable/btn_default"
+        android:fontFamily="@font/twcenmt"
+        android:text="Gray"
+        android:textColor="@drawable/btn_default_text"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/change_rgb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/change_rgb"
+        android:layout_width="129dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="380dp"
+        android:background="@drawable/btn_default"
+        android:fontFamily="@font/twcenmt"
+        android:text="RGB"
+        android:textColor="@drawable/btn_default_text"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
