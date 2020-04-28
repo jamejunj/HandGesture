@@ -35,7 +35,7 @@ import java.util.List;
 public class PreprocessingActivity extends AppCompatActivity {
     Uri imageUri;
     Bitmap imageBitmap, grayBitmap, binaryBitmap, denoiseBitmap, contourBitmap;
-    Button btn_back, btn_rgb, btn_gray, btn_binary, btn_denoise, btn_contour;
+    Button btn_back, btn_rgb, btn_gray, btn_binary, btn_denoise, btn_contour, btn_next;
     ImageView preview;
     Mat sampledImgMat;
 
@@ -50,6 +50,15 @@ public class PreprocessingActivity extends AppCompatActivity {
         btn_binary = findViewById(R.id.change_bin);
         btn_denoise = findViewById(R.id.change_denoise);
         btn_contour = findViewById(R.id.change_contour);
+        btn_next = findViewById(R.id.nextBtn);
+
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent destination = new Intent(PreprocessingActivity.this, LinkActivity.class);
+                startActivity(destination);
+            }
+        });
 
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
