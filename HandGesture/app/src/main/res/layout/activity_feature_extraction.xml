@@ -9,59 +9,78 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="142dp">
 
         <Button
             android:id="@+id/btn_gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:text="LOAD"
-            android:textSize="12dp" />
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/gallerybtn"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btn_histogram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/twcenmt"
+            android:background="@drawable/btn_default"
+            android:textColor="@drawable/btn_default_text"
+            android:textFontWeight="400"
+            android:textSize="20dp"
             android:text="H.RGB"
-            android:textSize="12dp" />
+             />
 
         <Button
             android:id="@+id/btn_gray_histogram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="75dp"
+            android:layout_toRightOf="@id/btn_histogram"
             android:text="H.GRAY"
-            android:textSize="12dp"
-            android:layout_toRightOf="@id/btn_histogram"/>
+            android:fontFamily="@font/twcenmt"
+            android:background="@drawable/btn_default"
+            android:textColor="@drawable/btn_default_text"
+            android:textFontWeight="400"
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/btn_brisk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="50dp"
-            android:text="BRISK"
-            android:textSize="12dp"
-            android:layout_toRightOf="@id/btn_gray_histogram" />
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="75dp"
+            android:layout_toRightOf="@id/btn_gray_histogram"
+            android:fontFamily="@font/twcenmt"
+            android:background="@drawable/btn_default"
+            android:textColor="@drawable/btn_default_text"
+            android:textFontWeight="400"
+            android:textSize="20dp"
+            android:text="BRISK"/>
 
         <Button
             android:id="@+id/btn_orb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="75dp"
+            android:layout_toRightOf="@id/btn_brisk"
             android:text="ORB"
-            android:textSize="12dp"
-            android:layout_toRightOf="@id/btn_brisk"/>
+            android:fontFamily="@font/twcenmt"
+            android:background="@drawable/btn_default"
+            android:textColor="@drawable/btn_default_text"
+            android:textFontWeight="400"
+            android:textSize="20dp" />
 
         <!--        <Button-->
         <!--            android:id="@+id/btn_convex"-->
@@ -73,8 +92,6 @@
         <!--            android:text="CONVEX"-->
         <!--            android:textSize="12dp"-->
         <!--            android:layout_toRightOf="@id/btn_orb"/>-->
-
-
 
 
     </RelativeLayout>
@@ -93,36 +110,40 @@
 
             <ImageView
                 android:id="@+id/imv_original"
-                android:layout_width="160dp"
-                android:layout_height="270dp"
+                android:layout_width="217dp"
+                android:layout_height="213dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="0dp"
-                app:srcCompat="@mipmap/ic_launcher" />
+                app:srcCompat="@color/defaults" />
 
             <TextView
                 android:id="@+id/title_feature_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/twcenmt"
                 android:text="FEATURE VALUE"
-                android:textSize="12sp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_feature_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:text="Feature Values" />
 
             <TextView
                 android:id="@+id/title_image_histogram"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/twcenmt"
                 android:text="IMAGE HISTOGRAM"
-                android:textSize="12sp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -132,7 +153,7 @@
                 android:background="@color/colorPrimary"
                 android:visibility="visible"
                 android:layout_marginTop="5dp"
-                app:srcCompat="@mipmap/ic_launcher" />
+                app:srcCompat="@color/defaults" />
 
         </LinearLayout>
 

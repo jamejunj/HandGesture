@@ -33,7 +33,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public class CaptureActivity extends AppCompatActivity {
-    Button btn_capture,btn_gallery;
+    Button btn_capture,btn_gallery,btn_feature,btn_compare;
+
     String currentPhotoPath;
     Bitmap imageBitmap;
     private final int REQUEST_TAKE_PHOTO  = 1;
@@ -44,7 +45,6 @@ public class CaptureActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capture);
-        MainActivity.setBuild((TextView)findViewById(R.id.buildDetail));
         // CAMERA BUTTON
         btn_capture = findViewById(R.id.btn_capture);
         btn_capture.setOnClickListener(new View.OnClickListener(){
@@ -73,6 +73,27 @@ public class CaptureActivity extends AppCompatActivity {
                 }
             }
         });
+        btn_feature = findViewById(R.id.btn_feature);
+        btn_compare = findViewById(R.id.btn_compare);
+
+
+        btn_feature.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CaptureActivity.this, FeatureExtractionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+        btn_compare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CaptureActivity.this, CompareImages.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -95,6 +116,8 @@ public class CaptureActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+
     /*private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent

@@ -10,7 +10,7 @@
         android:id="@+id/btn_capture"
         android:layout_width="307dp"
         android:layout_height="55dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/capturebtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,11 +21,46 @@
         android:id="@+id/btn_select"
         android:layout_width="307dp"
         android:layout_height="55dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/gallerybtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_capture" />
+
+
+    <Button
+        android:id="@+id/btn_compare"
+        android:layout_width="307dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="488dp"
+        android:background="@drawable/btn_primary"
+        android:fontFamily="@font/twcenmt"
+        android:text="Compare Image"
+        android:textAllCaps="false"
+        android:textColor="@drawable/btn_primary_text"
+        android:textFontWeight="500"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_feature"
+        android:layout_width="307dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="420dp"
+        android:background="@drawable/btn_primary"
+        android:fontFamily="@font/twcenmt"
+        android:text="Feature Extraction"
+        android:textAllCaps="false"
+        android:textColor="@drawable/btn_primary_text"
+        android:textFontWeight="500"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -37,30 +72,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/title_lg" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="72dp"
-        android:text="เริ่มต้นด้วยการถ่ายภาพหรือเลือกรูปภาพ\nสำหรับสกัดคุณลักษณะสำคัญ"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/buildDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="buildDetail"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
 </androidx.constraintlayout.widget.ConstraintLayout>

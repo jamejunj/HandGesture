@@ -37,7 +37,7 @@ public class PreprocessingActivity extends AppCompatActivity {
     Bitmap imageBitmap, grayBitmap, binaryBitmap, denoiseBitmap, contourBitmap;
     Button btn_back, btn_rgb, btn_gray, btn_binary, btn_denoise, btn_contour, btn_next;
     ImageView preview;
-    Mat sampledImgMat;
+    int PROCEED_TYPE; // 0 = gallery 1 = camera
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,15 +50,7 @@ public class PreprocessingActivity extends AppCompatActivity {
         btn_binary = findViewById(R.id.change_bin);
         btn_denoise = findViewById(R.id.change_denoise);
         btn_contour = findViewById(R.id.change_contour);
-        btn_next = findViewById(R.id.nextBtn);
 
-        btn_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent destination = new Intent(PreprocessingActivity.this, LinkActivity.class);
-                startActivity(destination);
-            }
-        });
 
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +103,7 @@ public class PreprocessingActivity extends AppCompatActivity {
         if (getIntent().getExtras().getString("type").equals("bmp")){
             imageBitmap = getIntent().getParcelableExtra("bmp");
             preview.setImageBitmap(imageBitmap);
+            PROCEED_TYPE = 1;
         }else{
             imageUri = Uri.parse(getIntent().getExtras().getString("uri"));
             String path = getPath(imageUri);
@@ -121,7 +114,25 @@ public class PreprocessingActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             preview.setImageBitmap(imageBitmap);
+            PROCEED_TYPE = 0;
         }
+
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (PROCEED_TYPE==1) {
+                    Intent intent = new Intent(getApplicationContext(), FeatureExtractionActivity.class);
+                    intent.putExtra("type", "bmp");
+                    intent.putExtra("bmp", imageBitmap);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(getApplicationContext(), FeatureExtractionActivity.class);
+                    intent.putExtra("type", "uri");
+                    intent.putExtra("uri", imageUri.toString());
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     private String getPath(Uri uri){
@@ -137,68 +148,6 @@ public class PreprocessingActivity extends AppCompatActivity {
             }
         }
         return uri.getPath();
-    }
-
-    private Mat loadImage(String path){
-        Mat originImage = Imgcodecs.imread(path); //Image will be in BGR format
-        Mat rgbImg = new Mat();
-
-        //Convert BGR to RGB
-        Imgproc.cvtColor(originImage,rgbImg, Imgproc.COLOR_BGR2RGB);
-
-        Display display = getWindowManager().getDefaultDisplay();
-
-        Point size = new Point();
-        display.getSize(size);
-
-        int mobile_width = size.x;
-        int mobile_height = size.y;
-
-        sampledImgMat = new Mat();
-        double downSampleRatio = calculateSubSimpleSize(rgbImg, mobile_width, mobile_height);
-
-        Imgproc.resize(rgbImg,sampledImgMat, new Size(), downSampleRatio, downSampleRatio, Imgproc.INTER_AREA);
-
-        try {
-            ExifInterface exif = new ExifInterface(path);
-            int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 1);
-            switch (orientation){
-                case ExifInterface.ORIENTATION_ROTATE_90:
-                    sampledImgMat = sampledImgMat.t();
-                    Core.flip(sampledImgMat, sampledImgMat,1);
-                    break;
-                case ExifInterface.ORIENTATION_ROTATE_270:
-                    sampledImgMat = sampledImgMat.t();
-                    Core.flip(sampledImgMat, sampledImgMat,0);
-                    break;
-            }
-        }catch(IOException e) {
-            e.printStackTrace();
-        }
-
-        return sampledImgMat;
-    }
-
-    private double calculateSubSimpleSize(Mat src, int mobile_width, int mobile_height) {
-        final int width = src.width();
-        final int height = src.height();
-        double inSampleSize = 1;
-
-        if (height > mobile_height || width > mobile_width){
-            //Calculate the ratio
-            final double heightRatio = (double)mobile_height / (double)height;
-            final double widthRatio = (double)mobile_width / (double)width;
-
-            inSampleSize = heightRatio < widthRatio ? height : width;
-        }
-        return inSampleSize;
-    }
-
-    private Bitmap convertMatToImageRGB(Mat mat){
-        Bitmap bitmap = Bitmap.createBitmap(mat.cols(),mat.rows(),Bitmap.Config.RGB_565);
-        //Convert mat to bitmap
-        Utils.matToBitmap(mat, bitmap);
-        return bitmap;
     }
 
     private void convertToGray(View v){

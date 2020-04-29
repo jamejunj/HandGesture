@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".PreprocessingActivity">
 
-    <Button
-        android:id="@+id/nextBtn"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="196dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/btn_primary"
-        android:fontFamily="@font/twcenmt"
-        android:text="Next"
-        android:textColor="@drawable/btn_primary_text"
-        android:textFontWeight="700"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageView
         android:id="@+id/title"
         android:layout_width="296dp"
@@ -43,8 +28,8 @@
 
     <Button
         android:id="@+id/returnBtn"
-        android:layout_width="106dp"
-        android:layout_height="48dp"
+        android:layout_width="288dp"
+        android:layout_height="38dp"
         android:layout_marginStart="60dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/btn_danger"
