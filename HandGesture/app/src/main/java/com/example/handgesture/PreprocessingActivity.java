@@ -35,9 +35,8 @@ import java.util.List;
 public class PreprocessingActivity extends AppCompatActivity {
     Uri imageUri;
     Bitmap imageBitmap, grayBitmap, binaryBitmap, denoiseBitmap, contourBitmap;
-    Button btn_back, btn_rgb, btn_gray, btn_binary, btn_denoise, btn_contour, btn_next;
+    Button btn_back, btn_rgb, btn_gray, btn_binary, btn_denoise, btn_contour;
     ImageView preview;
-    int PROCEED_TYPE; // 0 = gallery 1 = camera
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +102,6 @@ public class PreprocessingActivity extends AppCompatActivity {
         if (getIntent().getExtras().getString("type").equals("bmp")){
             imageBitmap = getIntent().getParcelableExtra("bmp");
             preview.setImageBitmap(imageBitmap);
-            PROCEED_TYPE = 1;
         }else{
             imageUri = Uri.parse(getIntent().getExtras().getString("uri"));
             String path = getPath(imageUri);
@@ -114,25 +112,7 @@ public class PreprocessingActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             preview.setImageBitmap(imageBitmap);
-            PROCEED_TYPE = 0;
         }
-
-        btn_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (PROCEED_TYPE==1) {
-                    Intent intent = new Intent(getApplicationContext(), FeatureExtractionActivity.class);
-                    intent.putExtra("type", "bmp");
-                    intent.putExtra("bmp", imageBitmap);
-                    startActivity(intent);
-                }else{
-                    Intent intent = new Intent(getApplicationContext(), FeatureExtractionActivity.class);
-                    intent.putExtra("type", "uri");
-                    intent.putExtra("uri", imageUri.toString());
-                    startActivity(intent);
-                }
-            }
-        });
     }
 
     private String getPath(Uri uri){
