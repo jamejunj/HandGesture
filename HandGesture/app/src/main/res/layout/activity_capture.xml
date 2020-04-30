@@ -77,7 +77,7 @@
         android:layout_width="307dp"
         android:layout_height="55dp"
         android:layout_marginTop="556dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/btn_primary"
         android:fontFamily="@font/twcenmt"
         android:text="Predict Image"
         android:textAllCaps="false"
