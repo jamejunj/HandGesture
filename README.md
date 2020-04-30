@@ -27,21 +27,27 @@ Soon!
 <img src="screenshots/ImagePreprocessing.jpg" width="200"/>
 
 ## Feature Extraction
+<div style="display:inline;">
 <img src="screenshots/FeatureExtractionH.RGB.jpg" width="200"/>
 <img src="screenshots/FeatureExtractionH.GRAY.jpg" width="200"/>
 <img src="screenshots/FeatureExtractionBRISK.jpg" width="200"/>
 <img src="screenshots/FeatureExtractionORB.jpg" width="200"/>
+</div>
 
 ## Compare Image
+<div style="display:inline;">
 <img src="screenshots/CompareImageH.RGB.jpg" width="200"/>
 <img src="screenshots/CompareImageH.GRAY.jpg" width="200"/>
 <img src="screenshots/CompareImageBRISK.jpg" width="200"/>
 <img src="screenshots/CompareImageORB.jpg" width="200"/>
+</div>
 
 ## Predict Result
+<div style="display:inline;">
 <img src="screenshots/PredictResultHammer.jpg" width="200"/>
 <img src="screenshots/PredictResultPaper.jpg" width="200"/>
 <img src="screenshots/PredictResultScissors.jpg" width="200"/>
+</div>
 
 ## About Page
 ![alt text](layout/About.png)
