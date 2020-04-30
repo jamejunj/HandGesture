@@ -33,7 +33,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class CaptureActivity extends AppCompatActivity {
-    Button btn_capture,btn_gallery,btn_feature,btn_compare;
+    Button btn_capture,btn_gallery,btn_feature,btn_compare,btn_predict;
 
     String currentPhotoPath;
     Bitmap imageBitmap;
@@ -91,6 +91,15 @@ public class CaptureActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CaptureActivity.this, CompareImages.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_predict = findViewById(R.id.btn_predict);
+        btn_predict.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CaptureActivity.this, PredictionActivity.class);
                 startActivity(intent);
             }
         });

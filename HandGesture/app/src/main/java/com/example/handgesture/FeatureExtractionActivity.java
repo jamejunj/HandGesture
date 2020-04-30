@@ -2,20 +2,18 @@ package com.example.handgesture;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
 import android.graphics.Point;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +28,7 @@ import org.opencv.android.Utils;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.MatOfDMatch;
 import org.opencv.core.MatOfFloat;
 import org.opencv.core.MatOfInt;
 import org.opencv.core.MatOfKeyPoint;
@@ -38,6 +37,7 @@ import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.features2d.DescriptorExtractor;
 import org.opencv.features2d.FeatureDetector;
+import org.opencv.features2d.Features2d;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
@@ -59,7 +59,6 @@ public class FeatureExtractionActivity extends AppCompatActivity {
     private int keypointsObject;
     private int REQUEST_CODE_GALLERRY = 100;
     private boolean src1Selected = false;
-
 
     private BaseLoaderCallback baseLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -113,7 +112,6 @@ public class FeatureExtractionActivity extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_CODE_GALLERRY);
             }
         });
-
 
         btn_histogram.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -408,6 +406,7 @@ public class FeatureExtractionActivity extends AppCompatActivity {
             Imgproc.calcHist(Arrays.asList(image), mChannels[c], mask, hist, mHistSize, histogramRanges);
 
             //set a limit to the maximum histogram value, so you can display it on your device screen
+            //Core.normalize(hist, hist, image.height()/2, 0, Core.NORM_INF);
             //Core.normalize(hist, hist, sizeRgba.height/2, 0, Core.NORM_INF);
 
             //get the histogram values for channel C, (hist --> mBuff)
@@ -479,7 +478,7 @@ public class FeatureExtractionActivity extends AppCompatActivity {
         Utils.bitmapToMat(imageBitmap, sourceMat);
 
         //Create Mat
-        MatOfFloat range = new MatOfFloat(0f, 255f);
+        MatOfFloat range = new MatOfFloat(0f, 256f);
         MatOfFloat histRange = new MatOfFloat(range);
         MatOfInt hisSize = new MatOfInt(histogramSize);
 
