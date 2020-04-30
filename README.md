@@ -16,30 +16,32 @@ Soon!
 * การทำความเข้าใจการทำงานของโปรแกรม
 
 ## Landing Page
-![alt text](layout/Landing.png)
+<img src="layout/Landing.png" width="200"/>
+
 
 ## Main Page
-![alt text](screenshots/MainPage.jpg)
+<img src="screenshots/MainPage.jpg" width="200"/>
+
 
 ## Image Preprocessing
-![alt text](screenshots/ImagePreprocessing.jpg)
+<img src="screenshots/ImagePreprocessing.jpg" width="200"/>
 
 ## Feature Extraction
-![alt text](screenshots/FeatureExtractionH.RGB.jpg)
-![alt text](screenshots/FeatureExtractionH.GRAY.jpg)
-![alt text](screenshots/FeatureExtractionBRISK.jpg)
-![alt text](screenshots/FeatureExtractionORB.jpg)
+<img src="screenshots/FeatureExtractionH.RGB.jpg" width="200"/>
+<img src="screenshots/FeatureExtractionH.GRAY.jpg" width="200"/>
+<img src="screenshots/FeatureExtractionBRISK.jpg" width="200"/>
+<img src="screenshots/FeatureExtractionORB.jpg" width="200"/>
 
 ## Compare Image
-![alt text](screenshots/CompareImageH.RGB.jpg)
-![alt text](screenshots/CompareImageH.GRAY.jpg)
-![alt text](screenshots/CompareImageBRISK.jpg)
-![alt text](screenshots/CompareImageORB.jpg)
+<img src="screenshots/CompareImageH.RGB.jpg" width="200"/>
+<img src="screenshots/CompareImageH.GRAY.jpg" width="200"/>
+<img src="screenshots/CompareImageBRISK.jpg" width="200"/>
+<img src="screenshots/CompareImageORB.jpg" width="200"/>
 
 ## Predict Result
-![alt text](screenshots/PredictResultHammer.jpg)
-![alt text](screenshots/PredictResultPaper.jpg)
-![alt text](screenshots/PredictResultScissors.jpg)
+<img src="screenshots/PredictResultHammer.jpg" width="200"/>
+<img src="screenshots/PredictResultPaper.jpg" width="200"/>
+<img src="screenshots/PredictResultScissors.jpg" width="200"/>
 
 ## About Page
 ![alt text](layout/About.png)
