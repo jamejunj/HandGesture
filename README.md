@@ -11,9 +11,6 @@ Soon!
 ### สิ่งที่ทำเพิ่มจากโปรเจคที่มีอยู่เดิม
 * ปรับปรุงการแสดงผลให้มีความสวยงามมากยิ่งขึ้น
 
-### อธิบายสิ่งที่ทำ
-Soon!
-
 ### สิ่งที่ยากสำหรับโปรเจคนี้
 * การทำความเข้าใจกับการเข้าถึงกล้อง และที่เก็บข้อมูล และคำสั่งๆ ต่างๆที่ต้องเขียนเพื่อเชื่อมต่อกับกล้องและที่เก็บข้อมูล
 * การทำความเข้าใจการทำงานของโปรแกรม
@@ -22,14 +19,27 @@ Soon!
 ![alt text](layout/Landing.png)
 
 ## Main Page
-![alt text](layout/Capture.png)
+![alt text](screenshots/MainPage.jpg)
 
 ## Image Preprocessing
-![alt text](layout/Preview.png)
+![alt text](screenshots/ImagePreprocessing.jpg)
 
-## Image Recognition
-![alt text](layout/Result.png)
-![alt text](layout/Result%20With%20Bar.png)
+## Feature Extraction
+![alt text](screenshots/FeatureExtractionH.RGB.jpg)
+![alt text](screenshots/FeatureExtractionH.GRAY.jpg)
+![alt text](screenshots/FeatureExtractionBRISK.jpg)
+![alt text](screenshots/FeatureExtractionORB.jpg)
+
+## Compare Image
+![alt text](screenshots/CompareImageH.RGB.jpg)
+![alt text](screenshots/CompareImageH.GRAY.jpg)
+![alt text](screenshots/CompareImageBRISK.jpg)
+![alt text](screenshots/CompareImageORB.jpg)
+
+## Predict Result
+![alt text](screenshots/PredictResultHammer.jpg)
+![alt text](screenshots/PredictResultPaper.jpg)
+![alt text](screenshots/PredictResultScissors.jpg)
 
 ## About Page
 ![alt text](layout/About.png)
