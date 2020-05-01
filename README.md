@@ -3,9 +3,9 @@
 2. นายจิรกฤต จิระพงษ์วนิช 6234409723
 
 ## Video Clip
-<a href="https://www.youtube.com/watch?v=j0ASQ4xustA">
-<img src="layout/yt_logo_mono_dark.png"/>
-</a>
+<img src="layout/yt_logo_mono_light.png" width="200"/>
+
+[![Watch now](https://img.youtube.com/vi/j0ASQ4xustA/0.jpg)](https://www.youtube.com/watch?v=j0ASQ4xustA)
 
 ผลงานนี้เป็นส่วนหนึ่งของรายวิชา 2301260 เทคนิคการทำโปรแกรม
 ภาคการศึกษาปลาย ปีการศึกษา 2562
